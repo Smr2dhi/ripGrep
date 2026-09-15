@@ -1,0 +1,3 @@
+User authentication is handled through the login system.
+The application verifies the user credentials.
+The verify_token method checks the authentication token.
