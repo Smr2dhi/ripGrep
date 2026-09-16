@@ -292,3 +292,38 @@
 2026-09-16 17:56:00,182 - INFO - app.llm - AsyncOpenAI client created
 2026-09-16 17:56:00,182 - INFO - app.llm - Default OpenAI-compatible client configured
 2026-09-16 17:56:00,182 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 18:49:22,393 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 18:49:22,393 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 18:49:22,394 - INFO - app.config - ENV file exists: True
+2026-09-16 18:49:22,394 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 18:49:22,394 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 18:49:22,394 - INFO - app.config - GEMINI_MODEL: gemini-3.7-flash
+2026-09-16 18:49:22,394 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 18:49:22,394 - INFO - app.config - Documents directory exists: True
+2026-09-16 18:49:25,744 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 18:49:25,752 - INFO - app.conversation - Conversation memory loaded - summary chars: 0, recent conversations: 1
+2026-09-16 18:49:25,752 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 18:49:25,752 - INFO - app.llm - Initializing LLM client
+2026-09-16 18:49:25,752 - INFO - app.llm - Gemini model configured: gemini-3.7-flash
+2026-09-16 18:49:25,752 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 18:49:25,752 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 18:49:25,753 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 18:49:25,753 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 18:49:25,753 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 18:50:00,852 - INFO - app.main - Document upload started: Undertaking_for_Tatkaal_Scheme_English.pdf
+2026-09-16 18:50:00,854 - INFO - app.main - Document saved: C:\Users\pc\Desktop\ripGrep\documents\Undertaking_for_Tatkaal_Scheme_English.pdf
+2026-09-16 18:50:01,123 - INFO - app.main - Document loaded successfully: Undertaking_for_Tatkaal_Scheme_English.pdf
+2026-09-16 18:50:01,123 - INFO - app.main - Upload request completed: Undertaking_for_Tatkaal_Scheme_English.pdf
+2026-09-16 18:50:07,252 - INFO - app.main - Question received: summary
+2026-09-16 18:50:07,253 - INFO - app.rag_pipeline - Received question: summary
+2026-09-16 18:50:07,253 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 18:50:07,253 - INFO - app.llm - Starting LLM call
+2026-09-16 18:50:07,253 - INFO - app.llm - Conversation context prepared - summary: 0 chars, recent conversations: 1
+2026-09-16 18:50:07,253 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 18:50:07,253 - INFO - app.llm - Agent created successfully
+2026-09-16 18:50:07,253 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 18:50:07,253 - INFO - app.llm - Running agent
+2026-09-16 18:50:07,253 - INFO - app.conversation - Memory retrieved - summary chars: 0, recent conversations: 1
+2026-09-16 18:52:08,701 - ERROR - app.llm - Gemini API error: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-09-16 18:52:08,702 - ERROR - app.rag_pipeline - RAG pipeline failed: LLM returned no response
+2026-09-16 18:52:08,702 - ERROR - app.main - No answer returned from RAG pipeline
