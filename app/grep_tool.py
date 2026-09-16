@@ -6,6 +6,27 @@ from app.config import DOCUMENTS_DIR
 
 logger = logging.getLogger(__name__)
 
+
+@function_tool
+def list_files() -> str:
+    """List files available in the company knowledge base."""
+
+    try:
+        files = [
+            file
+            for file in os.listdir(DOCUMENTS_DIR)
+            if os.path.isfile(os.path.join(DOCUMENTS_DIR, file))
+        ]
+
+        logger.info("Files found in knowledge base: %s", len(files))
+
+        return "\n".join(files)
+
+    except OSError as e:
+        logger.exception("Could not list knowledge base files")
+        return f"File listing error: {e}"
+
+    
 @function_tool
 def grep_search(keywords: list[str])-> str:
 
@@ -16,7 +37,7 @@ def grep_search(keywords: list[str])-> str:
     Pass individual useful search terms, not the complete user question.
     Use this tool when information is needed from the knowledge base.
     """
-    print("SEARCH KEYWORDS:", keywords)
+    logger.info("SEARCH KEYWORDS: %s", keywords)
     command=[
         "rg",
         "-n",
@@ -25,17 +46,19 @@ def grep_search(keywords: list[str])-> str:
     ]
     for keyword in keywords:
         command.extend(["-e",keyword])
-    command.append(DOCUMENTS_DIR)
+    command.append(".") #tells rg to search in the current directory.
 
     try:
         result=subprocess.run(
             command,
             capture_output=True,
             text=True,
-            check=False #"If the command exits with a non-zero status, don't automatically raise a Python exception
+            check=False ,#"If the command exits with a non-zero status, don't automatically raise a Python exception
+            cwd=DOCUMENTS_DIR
         )
         if result.returncode == 0:
-            logger.info("Grep search completed successfully")
+            matches=result.stdout.strip().splitlines()
+            logger.info("Grep search completed successfully. Matches found: %s",len(matches))
             return result.stdout
         
         if result.returncode == 1:

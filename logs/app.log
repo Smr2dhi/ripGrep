@@ -164,3 +164,156 @@
 2026-09-16 12:34:38,112 - INFO - app.rag_pipeline - RAG pipeline completed successfully
 2026-09-16 12:34:38,112 - INFO - __main__ - Answer received successfully
 2026-09-16 12:34:38,113 - INFO - __main__ - Application completed
+2026-09-16 12:49:00,249 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 12:49:00,249 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 12:49:00,249 - INFO - app.config - ENV file exists: True
+2026-09-16 12:49:00,249 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 12:49:00,249 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 12:49:00,249 - INFO - app.config - GEMINI_MODEL: gemini-3.6-flash
+2026-09-16 12:49:00,249 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 12:49:00,249 - INFO - app.config - Documents directory exists: True
+2026-09-16 12:49:00,425 - INFO - __main__ - Application started
+2026-09-16 12:49:00,425 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 12:49:00,425 - INFO - app.llm - Initializing LLM client
+2026-09-16 12:49:00,425 - INFO - app.llm - Gemini model configured: gemini-3.6-flash
+2026-09-16 12:49:00,425 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 12:49:00,425 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 12:49:00,426 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 12:49:00,426 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 12:49:00,426 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 12:49:00,426 - INFO - __main__ - RAG pipeline created
+2026-09-16 12:49:00,426 - INFO - __main__ - Sending question to RAG pipeline: How is user authentication handled?
+2026-09-16 12:49:00,426 - INFO - app.rag_pipeline - Received question: How is user authentication handled?
+2026-09-16 12:49:00,426 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 12:49:00,426 - INFO - app.llm - Starting LLM call
+2026-09-16 12:49:00,426 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 12:49:00,427 - INFO - app.llm - Agent created successfully
+2026-09-16 12:49:00,427 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 12:49:00,427 - INFO - app.llm - Running agent
+2026-09-16 12:49:31,413 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 12:49:31,413 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 12:49:31,413 - INFO - app.config - ENV file exists: True
+2026-09-16 12:49:31,414 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 12:49:31,414 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 12:49:31,414 - INFO - app.config - GEMINI_MODEL: gemini-3.6-flash
+2026-09-16 12:49:31,414 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 12:49:31,414 - INFO - app.config - Documents directory exists: True
+2026-09-16 12:49:31,486 - INFO - __main__ - Application started
+2026-09-16 12:49:31,486 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 12:49:31,486 - INFO - app.llm - Initializing LLM client
+2026-09-16 12:49:31,486 - INFO - app.llm - Gemini model configured: gemini-3.6-flash
+2026-09-16 12:49:31,486 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 12:49:31,486 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 12:49:31,487 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 12:49:31,487 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 12:49:31,487 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 12:49:31,487 - INFO - __main__ - RAG pipeline created
+2026-09-16 12:49:31,487 - INFO - __main__ - Sending question to RAG pipeline: How is user authentication handled?
+2026-09-16 12:49:31,487 - INFO - app.rag_pipeline - Received question: How is user authentication handled?
+2026-09-16 12:49:31,487 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 12:49:31,487 - INFO - app.llm - Starting LLM call
+2026-09-16 12:49:31,487 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 12:49:31,487 - INFO - app.llm - Agent created successfully
+2026-09-16 12:49:31,487 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 12:49:31,487 - INFO - app.llm - Running agent
+2026-09-16 12:49:40,060 - INFO - app.llm - Agent execution completed successfully
+2026-09-16 12:49:40,060 - INFO - app.llm - Token usage - input: 2183, output: 119, total: 2821
+2026-09-16 12:49:40,060 - INFO - app.llm - LLM response generated successfully
+2026-09-16 12:49:40,060 - INFO - app.rag_pipeline - RAG pipeline completed successfully
+2026-09-16 12:49:40,060 - INFO - __main__ - Answer received successfully
+2026-09-16 12:49:40,061 - INFO - __main__ - Application completed
+2026-09-16 13:10:48,815 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 13:10:48,815 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 13:10:48,815 - INFO - app.config - ENV file exists: True
+2026-09-16 13:10:48,815 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 13:10:48,815 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 13:10:48,815 - INFO - app.config - GEMINI_MODEL: gemini-3.6-flash
+2026-09-16 13:10:48,815 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 13:10:48,816 - INFO - app.config - Documents directory exists: True
+2026-09-16 13:10:49,008 - INFO - __main__ - Application started
+2026-09-16 13:10:49,008 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 13:10:49,008 - INFO - app.llm - Initializing LLM client
+2026-09-16 13:10:49,008 - INFO - app.llm - Gemini model configured: gemini-3.6-flash
+2026-09-16 13:10:49,008 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 13:10:49,008 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 13:10:49,009 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 13:10:49,009 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 13:10:49,009 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 13:10:49,009 - INFO - __main__ - RAG pipeline created
+2026-09-16 13:10:49,009 - INFO - __main__ - Sending question to RAG pipeline: How is user authentication handled?
+2026-09-16 13:10:49,009 - INFO - app.rag_pipeline - Received question: How is user authentication handled?
+2026-09-16 13:10:49,009 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 13:10:49,009 - INFO - app.llm - Starting LLM call
+2026-09-16 13:10:49,009 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 13:10:49,009 - INFO - app.llm - Agent created successfully
+2026-09-16 13:10:49,009 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 13:10:49,009 - INFO - app.llm - Running agent
+2026-09-16 13:10:58,524 - INFO - app.llm - Agent execution completed successfully: RunResult:
+- Last agent: Agent(name="GrepRAG Assistant", ...)
+- Final output (str):
+    ANSWER:
+    User authentication is handled through the login system, where the application verifies user credentials. Additionally, the `verify_token` method checks the authentication token.
+    
+    SOURCES:
+    - C:\Users\pc\Desktop\ripGrep\documents\auth.txt:1
+    - C:\Users\pc\Desktop\ripGrep\documents\auth.txt:2
+    - C:\Users\pc\Desktop\ripGrep\documents\auth.txt:3
+- 3 new item(s)
+- 2 raw response(s)
+- 0 input guardrail result(s)
+- 0 output guardrail result(s)
+(See `RunResult` for more details)
+2026-09-16 13:10:58,525 - INFO - app.llm - Token usage - input: 1482, output: 127, total: 2564
+2026-09-16 13:10:58,525 - INFO - app.llm - LLM response generated successfully
+2026-09-16 13:10:58,525 - INFO - app.rag_pipeline - RAG pipeline completed successfully
+2026-09-16 13:10:58,525 - INFO - __main__ - Answer received successfully
+2026-09-16 13:10:58,525 - INFO - __main__ - Application completed
+2026-09-16 15:35:26,431 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 15:35:26,431 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 15:35:26,431 - INFO - app.config - ENV file exists: True
+2026-09-16 15:35:26,431 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 15:35:26,431 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 15:35:26,431 - INFO - app.config - GEMINI_MODEL: gemini-3.6-flash
+2026-09-16 15:35:26,431 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 15:35:26,431 - INFO - app.config - Documents directory exists: True
+2026-09-16 15:35:26,664 - INFO - __main__ - Application started
+2026-09-16 15:35:26,664 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 15:35:26,665 - INFO - app.conversation - No previous conversation memory found
+2026-09-16 15:35:26,665 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 15:35:26,665 - INFO - app.llm - Initializing LLM client
+2026-09-16 15:35:26,665 - INFO - app.llm - Gemini model configured: gemini-3.6-flash
+2026-09-16 15:35:26,665 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 15:35:26,665 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 15:35:26,666 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 15:35:26,666 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 15:35:26,666 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 15:35:26,666 - INFO - __main__ - RAG pipeline created
+2026-09-16 15:35:26,666 - INFO - __main__ - Sending question to RAG pipeline: How is user authentication handled?
+2026-09-16 15:35:26,666 - INFO - app.rag_pipeline - Received question: How is user authentication handled?
+2026-09-16 15:35:26,666 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 15:35:26,666 - INFO - app.llm - Starting LLM call
+2026-09-16 15:35:26,666 - INFO - app.llm - Conversation context prepared - summary: 0 chars, recent conversations: 0
+2026-09-16 15:35:26,667 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 15:35:26,667 - INFO - app.llm - Agent created successfully
+2026-09-16 15:35:26,667 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 15:35:26,667 - INFO - app.llm - Running agent
+2026-09-16 15:35:26,667 - INFO - app.conversation - Memory retrieved - summary chars: 0, recent conversations: 0
+2026-09-16 15:35:33,707 - INFO - app.llm - Agent execution completed successfully
+2026-09-16 15:35:33,707 - INFO - app.llm - Token usage - input: 1473, output: 83, total: 2228
+2026-09-16 15:35:33,707 - INFO - app.llm - LLM response generated successfully
+2026-09-16 15:35:33,707 - INFO - app.conversation - conversation added - history size: 1
+2026-09-16 15:35:33,708 - ERROR - app.llm - Unexpected LLM error: 'str' object cannot be interpreted as an integer
+Traceback (most recent call last):
+  File "C:\Users\pc\Desktop\ripGrep\app\llm.py", line 122, in llm_call
+    self.memory.add_conversation(question,answer)  # CHANGED
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\pc\Desktop\ripGrep\app\conversation.py", line 59, in add_conversation
+    self.save_memory()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\pc\Desktop\ripGrep\app\conversation.py", line 70, in save_memory
+    with open(self,self.memory_file,"w",encoding="utf-8")as file:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+2026-09-16 15:35:33,709 - ERROR - app.rag_pipeline - RAG pipeline failed: LLM returned no response
+2026-09-16 15:35:33,709 - ERROR - __main__ - No answer received from RAG pipeline
+2026-09-16 15:35:33,709 - INFO - __main__ - Application completed
