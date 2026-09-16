@@ -1,23 +1,25 @@
 import asyncio
+import logging
 
 from app.rag_pipeline import RagPipeline
 
 
+logging.basicConfig(
+    level=logging.INFO
+)
+
+
 async def main():
 
-    rag=RagPipeline()
+    rag = RagPipeline()
 
-    while True:
+    response = await rag.ask(
+        "How is user authentication handled?"
+    )
 
-        question=input("\nYou: ")
-
-        if question.lower()=="exit":
-            break
-
-        answer=await rag.ask(question)
-
-        print("\nAssistant:",answer)
+    print("\nANSWER:")
+    print(response)
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     asyncio.run(main())

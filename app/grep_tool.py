@@ -1,5 +1,5 @@
 import subprocess
-
+import os
 from utils.logging import logging
 from agents import function_tool
 from app.config import DOCUMENTS_DIR
@@ -57,10 +57,18 @@ def grep_search(keywords: list[str])-> str:
             cwd=DOCUMENTS_DIR
         )
         if result.returncode == 0:
-            matches=result.stdout.strip().splitlines()
-            logger.info("Grep search completed successfully. Matches found: %s",len(matches))
-            return result.stdout
-        
+            matches = result.stdout.strip().splitlines()
+
+            logger.info(
+            "Grep search completed successfully. Matches found: %s",
+            len(matches))
+
+            from app.context_retrieval import get_context
+            context = get_context(
+                result.stdout)
+            
+            return context
+                
         if result.returncode == 1:
             logger.info("Grep search found no matches")
             return "NO matching information found."
