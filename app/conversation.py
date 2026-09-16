@@ -67,7 +67,7 @@ class ConversationMemory:
             "history":self.history
         }
 
-        with open(self,self.memory_file,"w",encoding="utf-8")as file:
+        with open(self.memory_file,"w",encoding="utf-8")as file:
             json.dump(data,file,indent=4)
         
         logger.info("Conversation memory saved to: %s",self.memory_file)
