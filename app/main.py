@@ -5,7 +5,8 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 
 from app.config import DOCUMENTS_DIR
 from app.models import AskRequest, AskResponse
-from app.rag_pipeline import RagPipeline
+from app.llm import LLMClient
+
 from ingestion.loader import load_document
 from utils.logging import get_logger
 
@@ -26,8 +27,8 @@ ALLOWED_EXTENSIONS = {
     ".docx"
 }
 
+llm = LLMClient()
 
-rag = RagPipeline()
 
 
 @app.post("/upload")
@@ -104,10 +105,10 @@ async def ask_question(request: AskRequest):
     logger.info("Question received: %s", request.question)
 
     try:
-        answer = await rag.ask( request.question )
+        answer = await llm.llm_call( request.question )
 
         if answer is None:
-            logger.error( "No answer returned from RAG pipeline")
+            logger.error( "No answer returned from llm call")
 
             raise HTTPException(
                 status_code=500,

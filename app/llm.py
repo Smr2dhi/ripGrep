@@ -106,13 +106,13 @@ Current user question :
 
             logger.info("Agent execution completed successfully")
 
-            if response.context_wrapper.usage:
-                logger.info(
-                    "Token usage - input: %s, output: %s, total: %s",
-                    response.context_wrapper.usage.input_tokens,
-                    response.context_wrapper.usage.output_tokens,
-                    response.context_wrapper.usage.total_tokens
-                )
+            # if response.context_wrapper.usage:
+            #     logger.info(
+            #         "Token usage - input: %s, output: %s, total: %s",
+            #         response.context_wrapper.usage.input_tokens,
+            #         response.context_wrapper.usage.output_tokens,
+            #         response.context_wrapper.usage.total_tokens
+            #     )
 
             answer=response.final_output
 
