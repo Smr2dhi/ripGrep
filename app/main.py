@@ -1,15 +1,33 @@
 import asyncio
+
 from app.rag_pipeline import RagPipeline
+from utils.logging import get_logger
+
+
+logger = get_logger(__name__)
+
 
 async def main():
-    rag= RagPipeline()
+    logger.info("Application started")
 
-    question = "What is the company's work from home policy?"
+    rag = RagPipeline()
+    logger.info("RAG pipeline created")
 
-    keyword=await rag .extract_keyword(question)
-    print("Question:", question)
-    print("Keyword:", keyword)
+    question = "How is user authentication handled?"
+
+    logger.info("Sending question to RAG pipeline: %s", question)
+
+    response = await rag.ask(question)
+
+    if response:
+        logger.info("Answer received successfully")
+    else:
+        logger.error("No answer received from RAG pipeline")
+
+    print("\nANSWER:")
+    print(response)
+
+    logger.info("Application completed")
 
 
-if __name__ == "__main__":
-    asyncio.run(main())
+asyncio.run(main())

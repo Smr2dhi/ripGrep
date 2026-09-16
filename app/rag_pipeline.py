@@ -1,40 +1,27 @@
 from app.llm import LLMClient
+from utils.logging import get_logger
+
+
+logger = get_logger(__name__)
+
 
 class RagPipeline:
     def __init__(self):
-        self.llm=LLMClient()
+        logger.info("Initializing RAG pipeline")
 
-    async def extract_keyword(self,question):
-        keyword=await self.llm.llm_call(
-            question,
-            system_instruction=
-   """You are a search keyword extraction assistant.
+        self.llm = LLMClient()
 
-Extract important individual keywords from the user's question.
+        logger.info("RAG pipeline initialized successfully")
 
-These keywords will be searched using ripgrep.
+    async def ask(self, question):
+        logger.info("Received question: %s", question)
 
-Rules:
-- Return individual words whenever possible.
-- Do not return the complete question.
-- Do not return explanations.
-- Do not return duplicate keywords.
-- Return only useful search terms.
-- Return the keywords in the keywords field.
+        logger.info("Sending question to LLM")
+        response = await self.llm.llm_call(question)
 
-Example:
+        if response:
+            logger.info("RAG pipeline completed successfully")
+        else:
+            logger.error("RAG pipeline failed: LLM returned no response")
 
-Question:
-What is the company's work from home policy?
-
-Keywords:
-["work", "home", "remote", "policy"]
-
-Question:
-Where is user authentication handled and what method is used?
-
-Keywords:
-["user", "authentication", "login", "method"]
-"""
-        )
-        return keyword
+        return response
