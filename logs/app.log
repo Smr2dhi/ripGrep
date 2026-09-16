@@ -89,3 +89,206 @@
 2026-09-16 17:24:29,114 - INFO - app.conversation - Memory retrieved - summary chars: 0, recent conversations: 1
 2026-09-16 17:24:41,009 - ERROR - app.llm - Gemini API error: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
 2026-09-16 17:24:41,010 - ERROR - app.rag_pipeline - RAG pipeline failed: LLM returned no response
+2026-09-16 17:30:08,014 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 17:30:08,015 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 17:30:08,015 - INFO - app.config - ENV file exists: True
+2026-09-16 17:30:08,015 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 17:30:08,015 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:30:08,015 - INFO - app.config - GEMINI_MODEL: gemini-3.7-flash
+2026-09-16 17:30:08,015 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 17:30:08,015 - INFO - app.config - Documents directory exists: True
+2026-09-16 17:30:08,185 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 17:30:08,185 - INFO - app.conversation - Conversation memory loaded - summary chars: 0, recent conversations: 1
+2026-09-16 17:30:08,185 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 17:30:08,185 - INFO - app.llm - Initializing LLM client
+2026-09-16 17:30:08,185 - INFO - app.llm - Gemini model configured: gemini-3.7-flash
+2026-09-16 17:30:08,185 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:30:08,185 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 17:30:08,186 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 17:30:08,186 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 17:30:08,186 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 17:30:08,186 - INFO - app.rag_pipeline - Received question: How is user authentication handled?
+2026-09-16 17:30:08,186 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 17:30:08,186 - INFO - app.llm - Starting LLM call
+2026-09-16 17:30:08,186 - INFO - app.llm - Conversation context prepared - summary: 0 chars, recent conversations: 1
+2026-09-16 17:30:08,186 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 17:30:08,186 - INFO - app.llm - Agent created successfully
+2026-09-16 17:30:08,186 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 17:30:08,186 - INFO - app.llm - Running agent
+2026-09-16 17:30:08,187 - INFO - app.conversation - Memory retrieved - summary chars: 0, recent conversations: 1
+2026-09-16 17:30:17,631 - ERROR - app.llm - Gemini API error: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-09-16 17:30:17,631 - ERROR - app.rag_pipeline - RAG pipeline failed: LLM returned no response
+2026-09-16 17:31:13,211 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 17:31:13,211 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 17:31:13,211 - INFO - app.config - ENV file exists: True
+2026-09-16 17:31:13,211 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 17:31:13,211 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:31:13,212 - INFO - app.config - GEMINI_MODEL: gemini-3.7-flash
+2026-09-16 17:31:13,212 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 17:31:13,212 - INFO - app.config - Documents directory exists: True
+2026-09-16 17:31:13,309 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 17:31:13,310 - INFO - app.conversation - Conversation memory loaded - summary chars: 0, recent conversations: 1
+2026-09-16 17:31:13,310 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 17:31:13,310 - INFO - app.llm - Initializing LLM client
+2026-09-16 17:31:13,310 - INFO - app.llm - Gemini model configured: gemini-3.7-flash
+2026-09-16 17:31:13,310 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:31:13,310 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 17:31:13,311 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 17:31:13,311 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 17:31:13,311 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 17:31:13,311 - INFO - app.rag_pipeline - Received question: How is user authentication handled?
+2026-09-16 17:31:13,311 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 17:31:13,311 - INFO - app.llm - Starting LLM call
+2026-09-16 17:31:13,311 - INFO - app.llm - Conversation context prepared - summary: 0 chars, recent conversations: 1
+2026-09-16 17:31:13,311 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 17:31:13,311 - INFO - app.llm - Agent created successfully
+2026-09-16 17:31:13,311 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 17:31:13,311 - INFO - app.llm - Running agent
+2026-09-16 17:31:13,311 - INFO - app.conversation - Memory retrieved - summary chars: 0, recent conversations: 1
+2026-09-16 17:32:57,081 - ERROR - app.llm - Gemini API error: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-09-16 17:32:57,082 - ERROR - app.rag_pipeline - RAG pipeline failed: LLM returned no response
+2026-09-16 17:33:32,307 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 17:33:32,307 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 17:33:32,307 - INFO - app.config - ENV file exists: True
+2026-09-16 17:33:32,308 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 17:33:32,308 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:33:32,308 - INFO - app.config - GEMINI_MODEL: gemini-3.7-flash
+2026-09-16 17:33:32,308 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 17:33:32,308 - INFO - app.config - Documents directory exists: True
+2026-09-16 17:33:32,486 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 17:33:32,486 - INFO - app.conversation - Conversation memory loaded - summary chars: 0, recent conversations: 1
+2026-09-16 17:33:32,486 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 17:33:32,487 - INFO - app.llm - Initializing LLM client
+2026-09-16 17:33:32,487 - INFO - app.llm - Gemini model configured: gemini-3.7-flash
+2026-09-16 17:33:32,487 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:33:32,487 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 17:33:32,487 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 17:33:32,487 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 17:33:32,487 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 17:33:32,487 - INFO - app.rag_pipeline - Received question: How is user authentication handled?
+2026-09-16 17:33:32,487 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 17:33:32,487 - INFO - app.llm - Starting LLM call
+2026-09-16 17:33:32,487 - INFO - app.llm - Conversation context prepared - summary: 0 chars, recent conversations: 1
+2026-09-16 17:33:32,487 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 17:33:32,488 - INFO - app.llm - Agent created successfully
+2026-09-16 17:33:32,488 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 17:33:32,488 - INFO - app.llm - Running agent
+2026-09-16 17:33:32,488 - INFO - app.conversation - Memory retrieved - summary chars: 0, recent conversations: 1
+2026-09-16 17:34:39,525 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 17:34:39,526 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 17:34:39,526 - INFO - app.config - ENV file exists: True
+2026-09-16 17:34:39,526 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 17:34:39,526 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:34:39,526 - INFO - app.config - GEMINI_MODEL: gemini-3.7-flash
+2026-09-16 17:34:39,526 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 17:34:39,526 - INFO - app.config - Documents directory exists: True
+2026-09-16 17:34:39,619 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 17:34:39,619 - INFO - app.conversation - Conversation memory loaded - summary chars: 0, recent conversations: 1
+2026-09-16 17:34:39,619 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 17:34:39,619 - INFO - app.llm - Initializing LLM client
+2026-09-16 17:34:39,619 - INFO - app.llm - Gemini model configured: gemini-3.7-flash
+2026-09-16 17:34:39,619 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:34:39,619 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 17:34:39,620 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 17:34:39,620 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 17:34:39,620 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 17:34:39,620 - INFO - app.rag_pipeline - Received question: How is user authentication handled?
+2026-09-16 17:34:39,620 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 17:34:39,620 - INFO - app.llm - Starting LLM call
+2026-09-16 17:34:39,620 - INFO - app.llm - Conversation context prepared - summary: 0 chars, recent conversations: 1
+2026-09-16 17:34:39,620 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 17:34:39,620 - INFO - app.llm - Agent created successfully
+2026-09-16 17:34:39,620 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 17:34:39,620 - INFO - app.llm - Running agent
+2026-09-16 17:34:39,620 - INFO - app.conversation - Memory retrieved - summary chars: 0, recent conversations: 1
+2026-09-16 17:34:59,838 - ERROR - app.llm - Gemini API error: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-09-16 17:34:59,839 - ERROR - app.rag_pipeline - RAG pipeline failed: LLM returned no response
+2026-09-16 17:45:22,441 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 17:45:22,441 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 17:45:22,441 - INFO - app.config - ENV file exists: True
+2026-09-16 17:45:22,441 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 17:45:22,441 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:45:22,441 - INFO - app.config - GEMINI_MODEL: gemini-3.7-flash
+2026-09-16 17:45:22,441 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 17:45:22,441 - INFO - app.config - Documents directory exists: True
+2026-09-16 17:45:24,325 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 17:45:24,325 - INFO - app.conversation - Conversation memory loaded - summary chars: 0, recent conversations: 1
+2026-09-16 17:45:24,325 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 17:45:24,325 - INFO - app.llm - Initializing LLM client
+2026-09-16 17:45:24,325 - INFO - app.llm - Gemini model configured: gemini-3.7-flash
+2026-09-16 17:45:24,325 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:45:24,325 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 17:45:24,326 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 17:45:24,326 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 17:45:24,326 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 17:46:31,193 - INFO - app.main - Document upload started: Session_28_Building_a_Complete_RAG_System.docx
+2026-09-16 17:46:31,194 - INFO - app.main - Document saved: C:\Users\pc\Desktop\ripGrep\documents\Session_28_Building_a_Complete_RAG_System.docx
+2026-09-16 17:46:31,266 - INFO - app.main - Document loaded successfully: Session_28_Building_a_Complete_RAG_System.docx
+2026-09-16 17:46:31,266 - INFO - app.main - Upload request completed: Session_28_Building_a_Complete_RAG_System.docx
+2026-09-16 17:47:22,437 - INFO - app.main - Question received: rag
+2026-09-16 17:47:22,437 - INFO - app.rag_pipeline - Received question: rag
+2026-09-16 17:47:22,437 - INFO - app.rag_pipeline - Sending question to LLM
+2026-09-16 17:47:22,437 - INFO - app.llm - Starting LLM call
+2026-09-16 17:47:22,437 - INFO - app.llm - Conversation context prepared - summary: 0 chars, recent conversations: 1
+2026-09-16 17:47:22,437 - INFO - app.llm - Creating GrepRAG agent
+2026-09-16 17:47:22,437 - INFO - app.llm - Agent created successfully
+2026-09-16 17:47:22,437 - INFO - app.llm - Grep search tool attached to agent
+2026-09-16 17:47:22,437 - INFO - app.llm - Running agent
+2026-09-16 17:47:22,437 - INFO - app.conversation - Memory retrieved - summary chars: 0, recent conversations: 1
+2026-09-16 17:48:18,461 - ERROR - app.llm - Gemini API error: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-09-16 17:48:18,461 - ERROR - app.rag_pipeline - RAG pipeline failed: LLM returned no response
+2026-09-16 17:48:18,461 - ERROR - app.main - No answer returned from RAG pipeline
+2026-09-16 17:49:54,318 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 17:49:54,318 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 17:49:54,319 - INFO - app.config - ENV file exists: True
+2026-09-16 17:49:54,319 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 17:49:54,319 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:49:54,319 - INFO - app.config - GEMINI_MODEL: gemini-3.7-flash
+2026-09-16 17:49:54,319 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 17:49:54,319 - INFO - app.config - Documents directory exists: True
+2026-09-16 17:49:56,524 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 17:49:56,525 - INFO - app.conversation - Conversation memory loaded - summary chars: 0, recent conversations: 1
+2026-09-16 17:49:56,525 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 17:49:56,525 - INFO - app.llm - Initializing LLM client
+2026-09-16 17:49:56,525 - INFO - app.llm - Gemini model configured: gemini-3.7-flash
+2026-09-16 17:49:56,525 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:49:56,525 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 17:49:56,526 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 17:49:56,526 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 17:49:56,526 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 17:53:29,876 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 17:53:29,877 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 17:53:29,877 - INFO - app.config - ENV file exists: True
+2026-09-16 17:53:29,877 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 17:53:29,877 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:53:29,877 - INFO - app.config - GEMINI_MODEL: gemini-3.7-flash
+2026-09-16 17:53:29,877 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 17:53:29,877 - INFO - app.config - Documents directory exists: True
+2026-09-16 17:53:31,766 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 17:53:31,767 - INFO - app.conversation - Conversation memory loaded - summary chars: 0, recent conversations: 1
+2026-09-16 17:53:31,767 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 17:53:31,767 - INFO - app.llm - Initializing LLM client
+2026-09-16 17:53:31,767 - INFO - app.llm - Gemini model configured: gemini-3.7-flash
+2026-09-16 17:53:31,767 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:53:31,767 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 17:53:31,768 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 17:53:31,768 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 17:53:31,768 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
+2026-09-16 17:55:57,990 - INFO - app.config - BASE_DIR: C:\Users\pc\Desktop\ripGrep
+2026-09-16 17:55:57,990 - INFO - app.config - ENV_FILE: C:\Users\pc\Desktop\ripGrep\.env
+2026-09-16 17:55:57,990 - INFO - app.config - ENV file exists: True
+2026-09-16 17:55:57,990 - INFO - app.config - GEMINI_API_KEY configured: True
+2026-09-16 17:55:57,990 - INFO - app.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:55:57,990 - INFO - app.config - GEMINI_MODEL: gemini-3.7-flash
+2026-09-16 17:55:57,990 - INFO - app.config - DOCUMENTS_DIR: C:\Users\pc\Desktop\ripGrep\documents
+2026-09-16 17:55:57,990 - INFO - app.config - Documents directory exists: True
+2026-09-16 17:56:00,180 - INFO - app.rag_pipeline - Initializing RAG pipeline
+2026-09-16 17:56:00,181 - INFO - app.conversation - Conversation memory loaded - summary chars: 0, recent conversations: 1
+2026-09-16 17:56:00,181 - INFO - app.conversation - Conversation memory initialized - max history: 2
+2026-09-16 17:56:00,181 - INFO - app.llm - Initializing LLM client
+2026-09-16 17:56:00,181 - INFO - app.llm - Gemini model configured: gemini-3.7-flash
+2026-09-16 17:56:00,181 - INFO - app.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-16 17:56:00,181 - INFO - app.llm - Gemini API key configured: True
+2026-09-16 17:56:00,182 - INFO - app.llm - AsyncOpenAI client created
+2026-09-16 17:56:00,182 - INFO - app.llm - Default OpenAI-compatible client configured
+2026-09-16 17:56:00,182 - INFO - app.rag_pipeline - RAG pipeline initialized successfully
