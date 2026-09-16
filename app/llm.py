@@ -39,8 +39,6 @@ class LLMClient:
 
         logger.info("Initializing LLM client")
 
-
-
         self.api_key=GEMINI_API_KEY
         self.base_url=GEMINI_ENDPOINT
         self.model_name=GEMINI_MODEL
@@ -74,9 +72,10 @@ class LLMClient:
         logger.info(
             "Conversation context prepared - summary: %s "
             "chars, recent conversations: %s",
-            len(self.memory.summary),len(self.memory.history))  # CHANGED
+            len(self.memory.summary),len(self.memory.history)) 
 
         logger.info("Creating GrepRAG agent")
+        
         agent=Agent(
             name="GrepRAG Assistant",
             instructions=system_instruction,
@@ -119,7 +118,7 @@ Current user question :
 
             logger.info("LLM response generated successfully")
 
-            self.memory.add_conversation(question,answer)  # CHANGED
+            self.memory.add_conversation(question,answer)  
 
             logger.info("Conversation added to memory")
 
@@ -137,5 +136,5 @@ Current user question :
 
         except Exception as e:
             self.last_error=str(e)
-            logger.exception("Unexpected LLM error: %s",e)  # CHANGED
+            logger.exception("Unexpected LLM error: %s",e)  
             return None

@@ -1,10 +1,10 @@
 import subprocess
 import os
-from utils.logging import logging
+from utils.logging import get_logger
 from agents import function_tool
 from app.config import DOCUMENTS_DIR
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 @function_tool

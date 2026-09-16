@@ -31,32 +31,21 @@ rag = RagPipeline()
 
 
 @app.post("/upload")
-async def upload_document(
-    file: UploadFile = File(...)
-):
+async def upload_document(file: UploadFile = File(...)):
 
-    logger.info(
-        "Document upload started: %s",
-        file.filename
-    )
+    logger.info("Document upload started: %s", file.filename)
 
     if not file.filename:
-
-        logger.warning(
-            "Upload rejected: filename missing"
-        )
+        logger.warning("Upload rejected: filename missing")
 
         raise HTTPException(
             status_code=400,
             detail="Filename is required."
         )
 
-    extension = os.path.splitext(
-        file.filename
-    )[1].lower()
+    extension = os.path.splitext(  file.filename)[1].lower()
 
     if extension not in ALLOWED_EXTENSIONS:
-
         logger.warning(
             "Upload rejected: unsupported file type: %s",
             extension
@@ -67,45 +56,24 @@ async def upload_document(
             detail="Only .txt, .md, .pdf and .docx files are allowed."
         )
 
-    filename = os.path.basename(
-        file.filename
-    )
+    filename = os.path.basename( file.filename)
 
-    file_path = os.path.join(
-        DOCUMENTS_DIR,
-        filename
-    )
+    file_path = os.path.join(DOCUMENTS_DIR,filename)
 
     try:
+        os.makedirs(DOCUMENTS_DIR,exist_ok=True)
 
-        os.makedirs(
-            DOCUMENTS_DIR,
-            exist_ok=True
-        )
-
-        with open(
-            file_path,
-            "wb"
-        ) as saved_file:
-
-            shutil.copyfileobj(
-                file.file,
-                saved_file
-            )
+        with open(file_path,"wb") as saved_file:
+            shutil.copyfileobj(file.file, saved_file)
 
         logger.info(
             "Document saved: %s",
             file_path
         )
 
-        document = load_document(
-            file_path
-        )
+        document = load_document(file_path)
 
-        logger.info(
-            "Document loaded successfully: %s",
-            filename
-        )
+        logger.info("Document loaded successfully: %s", filename)
 
         return {
             "message": "Document uploaded successfully",
@@ -116,10 +84,7 @@ async def upload_document(
 
     except Exception as e:
 
-        logger.exception(
-            "Document upload failed: %s",
-            e
-        )
+        logger.exception( "Document upload failed: %s", e)
 
         raise HTTPException(
             status_code=500,
@@ -127,48 +92,28 @@ async def upload_document(
         )
 
     finally:
-
         await file.close()
 
         logger.info(
-            "Upload request completed: %s",
-            file.filename
-        )
+            "Upload request completed: %s",file.filename )
 
 
-@app.post(
-    "/ask",
-    response_model=AskResponse
-)
-async def ask_question(
-    request: AskRequest
-):
+@app.post("/ask", response_model=AskResponse)
+async def ask_question(request: AskRequest):
 
-    logger.info(
-        "Question received: %s",
-        request.question
-    )
+    logger.info("Question received: %s", request.question)
 
     try:
-
-        answer = await rag.ask(
-            request.question
-        )
+        answer = await rag.ask( request.question )
 
         if answer is None:
-
-            logger.error(
-                "No answer returned from RAG pipeline"
-            )
+            logger.error( "No answer returned from RAG pipeline")
 
             raise HTTPException(
                 status_code=500,
                 detail="Unable to generate an answer."
             )
-
-        logger.info(
-            "Question answered successfully"
-        )
+        logger.info( "Question answered successfully")
 
         return AskResponse(
             question=request.question,
@@ -178,17 +123,13 @@ async def ask_question(
         )
 
     except HTTPException:
-
         raise
 
     except Exception as e:
 
-        logger.exception(
-            "Question processing failed: %s",
-            e
-        )
+        logger.exception("Question processing failed: %s",e)
 
         raise HTTPException(
             status_code=500,
             detail="Failed to process question."
-        )
+    )
