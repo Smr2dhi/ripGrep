@@ -5,33 +5,111 @@ import streamlit as st
 API_URL = "http://127.0.0.1:8000"
 
 
+# ============================================================
+# PAGE CONFIG
+# ============================================================
+
 st.set_page_config(
     page_title="GrepRAG",
     page_icon="📚",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
 
-st.title("📚 GrepRAG")
-st.caption("AI Knowledge Assistant")
+# ============================================================
+# SESSION STATE
+# ============================================================
+
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
 
-# ---------------- SIDEBAR ----------------
+if "uploaded_document" not in st.session_state:
+    st.session_state.uploaded_document = None
+
+
+# ============================================================
+# SIDEBAR
+# ============================================================
 
 with st.sidebar:
 
-    st.header("Upload Document")
+    st.title("📚 GrepRAG")
+
+    st.caption("AI Knowledge Assistant")
+
+    st.divider()
+
+
+    # --------------------------------------------------------
+    # BACKEND STATUS
+    # --------------------------------------------------------
+
+    st.subheader("System Status")
+
+    try:
+
+        response = requests.get(
+            API_URL,
+            timeout=3
+        )
+
+        if response.status_code < 500:
+
+            st.success("Backend connected")
+
+        else:
+
+            st.error("Backend error")
+
+    except Exception:
+
+        st.error("Backend offline")
+
+
+    st.divider()
+
+
+    # --------------------------------------------------------
+    # DOCUMENT UPLOAD
+    # --------------------------------------------------------
+
+    st.subheader("📄 Knowledge Base")
+
+    st.caption(
+        "Upload a document that GrepRAG can search."
+    )
+
 
     uploaded_file = st.file_uploader(
         "Choose a document",
-        type=["txt", "md", "pdf", "docx"]
+        type=[
+            "txt",
+            "md",
+            "pdf",
+            "docx"
+        ]
     )
 
-    if st.button("Upload"):
+
+    if uploaded_file:
+
+        st.info(
+            f"Selected document:\n\n{uploaded_file.name}"
+        )
+
+
+    if st.button(
+        "⬆️ Upload Document",
+        use_container_width=True
+    ):
 
         if uploaded_file is None:
 
-            st.warning("Please select a document.")
+            st.warning(
+                "Please select a document first."
+            )
 
         else:
 
@@ -45,7 +123,10 @@ with st.sidebar:
                     )
                 }
 
-                with st.spinner("Uploading document..."):
+
+                with st.spinner(
+                    "Uploading document..."
+                ):
 
                     response = requests.post(
                         f"{API_URL}/upload",
@@ -53,32 +134,50 @@ with st.sidebar:
                         timeout=60
                     )
 
+
                 if response.status_code == 200:
+
+                    st.session_state.uploaded_document = (
+                        uploaded_file.name
+                    )
 
                     st.success(
                         "Document uploaded successfully."
                     )
 
+                    st.rerun()
+
+
                 else:
 
-                    st.error(
-                        response.json().get(
+                    try:
+
+                        error = response.json().get(
                             "detail",
                             "Upload failed."
                         )
-                    )
+
+                    except Exception:
+
+                        error = "Upload failed."
+
+
+                    st.error(error)
+
 
             except requests.exceptions.ConnectionError:
 
                 st.error(
-                    "Could not connect to FastAPI backend."
+                    "Could not connect to FastAPI."
                 )
+
 
             except requests.exceptions.Timeout:
 
                 st.error(
                     "Upload request timed out."
                 )
+
 
             except Exception as e:
 
@@ -87,31 +186,214 @@ with st.sidebar:
                 )
 
 
-# ---------------- CHAT ----------------
+    # --------------------------------------------------------
+    # CURRENT DOCUMENT
+    # --------------------------------------------------------
 
-st.header("Ask your Knowledge Base")
+    if st.session_state.uploaded_document:
+
+        st.divider()
+
+        st.subheader("Current Document")
+
+        st.write(
+            f"📄 {st.session_state.uploaded_document}"
+        )
 
 
-if "messages" not in st.session_state:
+    # --------------------------------------------------------
+    # CONVERSATION
+    # --------------------------------------------------------
 
-    st.session_state.messages = []
+    st.divider()
 
+    st.subheader("💬 Conversation")
+
+    st.caption(
+        f"{len(st.session_state.messages)} messages"
+    )
+
+
+    if st.button(
+        "🗑️ Clear Conversation",
+        use_container_width=True
+    ):
+
+        st.session_state.messages = []
+
+        st.rerun()
+
+
+    # --------------------------------------------------------
+    # SUPPORTED FILES
+    # --------------------------------------------------------
+
+    st.divider()
+
+    st.caption("SUPPORTED FILE TYPES")
+
+    st.write(
+        "TXT • MD • PDF • DOCX"
+    )
+
+
+# ============================================================
+# MAIN HEADER
+# ============================================================
+
+st.title("📚 GrepRAG")
+
+st.caption(
+    "Search your documents and get answers grounded in your knowledge base."
+)
+
+
+st.divider()
+
+
+# ============================================================
+# WELCOME SCREEN
+# ============================================================
+
+if not st.session_state.messages:
+
+    st.header(
+        "📖 Ask questions about your documents"
+    )
+
+    st.write(
+        "Upload a document from the sidebar and ask questions "
+        "about its content. GrepRAG searches the knowledge base "
+        "and provides an answer based on the retrieved information."
+    )
+
+
+    st.write("")
+
+
+    # --------------------------------------------------------
+    # FEATURE CARDS
+    # --------------------------------------------------------
+
+    col1, col2, col3 = st.columns(3)
+
+
+    with col1:
+
+        with st.container(border=True):
+
+            st.subheader("🔎 Search Documents")
+
+            st.write(
+                "Find relevant information from your uploaded "
+                "documents using Grep search."
+            )
+
+
+    with col2:
+
+        with st.container(border=True):
+
+            st.subheader("💬 Ask Naturally")
+
+            st.write(
+                "Ask questions in normal language and let the "
+                "AI agent retrieve relevant information."
+            )
+
+
+    with col3:
+
+        with st.container(border=True):
+
+            st.subheader("📎 Grounded Sources")
+
+            st.write(
+                "See the documents used to retrieve information "
+                "for your answer."
+            )
+
+
+    st.write("")
+
+
+    st.info(
+        "💡 Upload a document from the sidebar and then ask "
+        "your first question below."
+    )
+
+
+# ============================================================
+# CHAT HISTORY
+# ============================================================
 
 for message in st.session_state.messages:
 
-    with st.chat_message(message["role"]):
+    with st.chat_message(
+        message["role"]
+    ):
 
         st.markdown(
             message["content"]
         )
 
 
+        # ----------------------------------------------------
+        # SOURCES
+        # ----------------------------------------------------
+
+        if (
+            message["role"] == "assistant"
+            and message.get("sources")
+        ):
+
+            sources = message["sources"]
+
+
+            with st.expander(
+                f"📎 Sources ({len(sources)})"
+            ):
+
+                for source in sources:
+
+                    document = source.get(
+                        "document",
+                        ""
+                    )
+
+                    snippet = source.get(
+                        "snippet",
+                        ""
+                    )
+
+
+                    st.markdown(
+                        f"**📄 {document}**"
+                    )
+
+                    if snippet:
+
+                        st.caption(
+                            snippet
+                        )
+
+                    st.divider()
+
+
+# ============================================================
+# CHAT INPUT
+# ============================================================
+
 question = st.chat_input(
-    "Ask a question about your documents..."
+    "Ask a question about your knowledge base..."
 )
 
 
 if question:
+
+    # --------------------------------------------------------
+    # SAVE USER QUESTION
+    # --------------------------------------------------------
 
     st.session_state.messages.append(
         {
@@ -120,16 +402,26 @@ if question:
         }
     )
 
+
+    # --------------------------------------------------------
+    # DISPLAY USER QUESTION
+    # --------------------------------------------------------
+
     with st.chat_message("user"):
 
-        st.markdown(question)
+        st.write(question)
+
+
+    # --------------------------------------------------------
+    # CALL BACKEND
+    # --------------------------------------------------------
 
     with st.chat_message("assistant"):
 
         try:
 
             with st.spinner(
-                "Searching knowledge base..."
+                "🔎 Searching your knowledge base..."
             ):
 
                 response = requests.post(
@@ -140,66 +432,133 @@ if question:
                     timeout=120
                 )
 
+
+            # ------------------------------------------------
+            # SUCCESS
+            # ------------------------------------------------
+
             if response.status_code == 200:
 
                 data = response.json()
+
 
                 answer = data.get(
                     "answer",
                     "No answer returned."
                 )
 
-                st.markdown(answer)
 
                 sources = data.get(
                     "sources",
                     []
                 )
 
+
+                # Display answer
+
+                st.markdown(
+                    answer
+                )
+
+
+                # Display sources
+
                 if sources:
 
-                    st.markdown("### Sources")
+                    with st.expander(
+                        f"📎 Sources ({len(sources)})"
+                    ):
 
-                    for source in sources:
+                        for source in sources:
 
-                        st.markdown(
-                            f"**{source.get('document', '')}**"
-                        )
+                            document = source.get(
+                                "document",
+                                ""
+                            )
 
-                        st.caption(
-                            source.get(
+                            snippet = source.get(
                                 "snippet",
                                 ""
                             )
-                        )
+
+
+                            st.markdown(
+                                f"**📄 {document}**"
+                            )
+
+
+                            if snippet:
+
+                                st.caption(
+                                    snippet
+                                )
+
+
+                            st.divider()
+
+
+                # ------------------------------------------------
+                # SAVE ASSISTANT RESPONSE
+                # ------------------------------------------------
 
                 st.session_state.messages.append(
                     {
                         "role": "assistant",
-                        "content": answer
+                        "content": answer,
+                        "sources": sources
                     }
                 )
 
+
+            # ------------------------------------------------
+            # API ERROR
+            # ------------------------------------------------
+
             else:
 
-                error_message = response.json().get(
-                    "detail",
-                    "Failed to get answer."
+                try:
+
+                    error_message = response.json().get(
+                        "detail",
+                        "Failed to get answer."
+                    )
+
+                except Exception:
+
+                    error_message = "Failed to get answer."
+
+
+                st.error(
+                    error_message
                 )
 
-                st.error(error_message)
+
+        # ----------------------------------------------------
+        # CONNECTION ERROR
+        # ----------------------------------------------------
 
         except requests.exceptions.ConnectionError:
 
             st.error(
-                "Could not connect to FastAPI backend."
+                "Could not connect to FastAPI backend. "
+                "Make sure Uvicorn is running."
             )
+
+
+        # ----------------------------------------------------
+        # TIMEOUT
+        # ----------------------------------------------------
 
         except requests.exceptions.Timeout:
 
             st.error(
-                "The request timed out."
+                "The request timed out. Please try again."
             )
+
+
+        # ----------------------------------------------------
+        # OTHER ERROR
+        # ----------------------------------------------------
 
         except Exception as e:
 

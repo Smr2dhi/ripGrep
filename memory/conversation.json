@@ -1,9 +1,13 @@
 {
-    "summary": "",
+    "summary": "User: How is user authentication handled?\nAssistant: ANSWER:\nUser authentication is handled through the login system, where the application verifies the user's credentials, and the `verify_token` method checks the authentication token.\n\nSOURCES:\n- .\\auth.txt:1\n- .\\auth.txt:2\n- .\\auth.txt:3\nUser: hii\nAssistant: Hello! How can I assist you today?\nUser: What was the greeting I used in my previous message?\nAssistant: In your previous message, you used the greeting \"hii\".\nUser: What documents are available?\nAssistant: ANSWER:\nThe following documents are available in the knowledge base:\n- auth.txt\n- Session_28_Building_a_Complete_RAG_System.docx\n- Undertaking_for_Tatkaal_Scheme_English.pdf",
     "history": [
         {
-            "question": "How is user authentication handled?",
-            "answer": "ANSWER:\nUser authentication is handled through the login system, where the application verifies the user's credentials, and the `verify_token` method checks the authentication token.\n\nSOURCES:\n- .\\auth.txt:1\n- .\\auth.txt:2\n- .\\auth.txt:3"
+            "question": "How many documents do applicants below the age of 18 years have to submit?",
+            "answer": "I do not know based on the current knowledge base."
+        },
+        {
+            "question": "How many documents do applicants below the age of 18 years have to submit?",
+            "answer": "I do not know based on the current knowledge base."
         }
     ]
 }

@@ -1,3 +1,15 @@
-User authentication is handled through the login system.
-The application verifies the user credentials.
-The verify_token method checks the authentication token.
+Authentication System
+
+The application uses token-based authentication to protect user accounts and API endpoints.
+
+Users first log in with their username and password. The login service verifies the provided credentials against the stored user information.
+
+After successful login, the system generates an authentication token. The client must include this token when making requests to protected endpoints.
+
+The verify_token function checks whether the provided token is valid and has not expired.
+
+If the token is invalid or expired, the request is rejected and the user must log in again.
+
+Protected endpoints require authentication before allowing access to user-specific data.
+
+Authorization is handled separately from authentication. Authentication verifies the identity of the user, while authorization determines whether the authenticated user has permission to perform a particular action.

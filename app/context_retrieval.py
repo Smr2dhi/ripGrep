@@ -42,7 +42,6 @@ def get_context( grep_result, context_lines=5, max_chars=12000):
     total_chars = 0
 
     for file_path, line_numbers in matches.items():
-
         full_path = os.path.join( DOCUMENTS_DIR, file_path)
 
         try:

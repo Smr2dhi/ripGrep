@@ -10,7 +10,7 @@ logger = get_logger(__name__)
 @function_tool
 def list_files() -> str:
     """List files available in the company knowledge base."""
-
+    logger.info("TOOL CALLED: list_files")
     try:
         files = [
             file
@@ -37,6 +37,7 @@ def grep_search(keywords: list[str])-> str:
     Pass individual useful search terms, not the complete user question.
     Use this tool when information is needed from the knowledge base.
     """
+    logger.info("TOOL CALLED: grep_search")
     logger.info("SEARCH KEYWORDS: %s", keywords)
     command=[
         "rg",
@@ -64,8 +65,7 @@ def grep_search(keywords: list[str])-> str:
             len(matches))
 
             from app.context_retrieval import get_context
-            context = get_context(
-                result.stdout)
+            context = get_context(result.stdout)
             
             return context
                 

@@ -80,16 +80,18 @@ class LLMClient:
             name="GrepRAG Assistant",
             instructions=system_instruction,
             model=self.model_name,
-            model_settings=ModelSettings(max_tokens=1500),
+            # model_settings=ModelSettings(max_tokens=1500),
             tools=[grep_search,list_files]
         )
         logger.info("Agent created successfully")
-        logger.info("Grep search tool attached to agent")
-        logger.info("Running agent")
+        logger.debug("System instaruction: "+str(system_instruction))
+        logger.info("Tools available to agent: grep_search, list_files")
+        logger.info("Starting agent execution")
 
         try:
 
             memory=self.memory.get_memory()
+            logger.info("Conversation memory retrieved")
 
             full_prompt=f"""
 {memory}
@@ -98,6 +100,7 @@ Current user question :
 {question}
 
 """
+            logger.info("Sending question and conversation context to agent")
 
             response=await Runner.run(
                 agent,
@@ -106,13 +109,13 @@ Current user question :
 
             logger.info("Agent execution completed successfully")
 
-            # if response.context_wrapper.usage:
-            #     logger.info(
-            #         "Token usage - input: %s, output: %s, total: %s",
-            #         response.context_wrapper.usage.input_tokens,
-            #         response.context_wrapper.usage.output_tokens,
-            #         response.context_wrapper.usage.total_tokens
-            #     )
+            if response.context_wrapper.usage:
+                logger.info(
+                    "Token usage - input: %s, output: %s, total: %s",
+                    response.context_wrapper.usage.input_tokens,
+                    response.context_wrapper.usage.output_tokens,
+                    response.context_wrapper.usage.total_tokens
+                )
 
             answer=response.final_output
 

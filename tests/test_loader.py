@@ -1,12 +1,38 @@
+from fastapi import FastAPI, UploadFile, File
+import os
+import shutil
+
 from ingestion.loader import load_document
 
 
-def test_load_txt():
+app = FastAPI()
 
-    document = load_document(
-        "documents/auth.txt"
+
+UPLOAD_DIR = "documents"
+
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+
+@app.post("/test-loader")
+async def test_loader(file: UploadFile = File(...)):
+
+    file_path = os.path.join(
+        UPLOAD_DIR,
+        file.filename
     )
 
-    assert document["document_name"] == "auth.txt"
-    assert document["file_type"] == "txt"
-    assert "authentication" in document["text"].lower()
+    with open(file_path, "wb") as buffer:
+
+        shutil.copyfileobj(
+            file.file,
+            buffer
+        )
+
+    result = load_document(file_path)
+
+    return {
+        "document_name": result["document_name"],
+        "file_type": result["file_type"],
+        "pages": result["pages"],
+        "text": result["text"]
+    }

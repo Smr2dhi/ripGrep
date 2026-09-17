@@ -34,7 +34,6 @@ class AskRequest(BaseModel):
 class SourceCitation(BaseModel):
 
     document: str
-
     snippet: str = Field(
         max_length=60,
         description="A very brief excerpt supporting the citation."
@@ -42,11 +41,7 @@ class SourceCitation(BaseModel):
 
 
 class AskResponse(BaseModel):
-
     question: str
-
     answer: str
-
     sources: list[SourceCitation]
-
     mode: str
