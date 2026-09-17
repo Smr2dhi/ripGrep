@@ -4,7 +4,7 @@ import shutil
 from fastapi import FastAPI, UploadFile, File, HTTPException
 
 from backend.config import DOCUMENTS_DIR
-from backend.models import AskRequest, AskResponse
+from backend.models import AskRequest, AskResponse,SourceCitation
 from backend.llm import LLMClient
 
 from backend.ingestion.loader import load_document
@@ -29,7 +29,28 @@ ALLOWED_EXTENSIONS = {
 
 llm = LLMClient()
 
+def extract_sources(answer: str):
 
+    sources = []
+
+    if "SOURCES:" not in answer:
+        return sources
+
+    for line in answer.split("SOURCES:", 1)[1].splitlines():
+
+        if not line.strip().startswith("-"):
+            continue
+
+        document, line_number = line.strip()[1:].strip().rsplit(":", 1)
+
+        sources.append(
+            SourceCitation(
+                document=os.path.basename(document),
+                line=int(line_number)
+            )
+        )
+
+    return sources
 
 @app.post("/upload")
 async def upload_document(file: UploadFile = File(...)):
@@ -114,12 +135,17 @@ async def ask_question(request: AskRequest):
                 status_code=500,
                 detail="Unable to generate an answer."
             )
+        sources = extract_sources(answer)
+
+
+        logger.info("Sources extracted from answer: %s",len(sources))
+
         logger.info( "Question answered successfully")
 
         return AskResponse(
             question=request.question,
             answer=answer,
-            sources=[],
+            sources=sources,
             mode="live"
         )
 

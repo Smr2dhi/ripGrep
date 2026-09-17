@@ -3620,3 +3620,148 @@
 2026-09-17 16:32:44,594 - INFO - backend.ingestion.loader - File loaded: Mini_RAG_Build_Guide.docx
 2026-09-17 16:32:44,595 - INFO - backend.main - Document loaded successfully: Mini_RAG_Build_Guide.docx
 2026-09-17 16:32:44,596 - INFO - backend.main - Upload request completed: Mini_RAG_Build_Guide.docx
+2026-09-17 17:57:06,237 - INFO - backend.config - BASE_DIR: /app
+2026-09-17 17:57:06,239 - INFO - backend.config - ENV_FILE: /app/.env
+2026-09-17 17:57:06,240 - INFO - backend.config - ENV file exists: False
+2026-09-17 17:57:06,241 - INFO - backend.config - GEMINI_API_KEY configured: True
+2026-09-17 17:57:06,241 - INFO - backend.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-17 17:57:06,242 - INFO - backend.config - GEMINI_MODEL: gemini-3.6-flash
+2026-09-17 17:57:06,243 - INFO - backend.config - DOCUMENTS_DIR: /app/documents
+2026-09-17 17:57:06,244 - INFO - backend.config - Documents directory exists: True
+2026-09-17 17:57:08,606 - INFO - backend.conversation - Conversation memory loaded - summary chars: 835, recent conversations: 2
+2026-09-17 17:57:08,606 - INFO - backend.conversation - Conversation memory initialized - max history: 2
+2026-09-17 17:57:08,607 - INFO - backend.llm - Initializing LLM client
+2026-09-17 17:57:08,608 - INFO - backend.llm - Gemini model configured: gemini-3.6-flash
+2026-09-17 17:57:08,608 - INFO - backend.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-17 17:57:08,609 - INFO - backend.llm - Gemini API key configured: True
+2026-09-17 17:57:08,610 - INFO - backend.llm - AsyncOpenAI client created
+2026-09-17 17:57:08,611 - INFO - backend.llm - Default OpenAI-compatible client configured
+2026-09-17 18:07:07,597 - INFO - backend.main - Document upload started: Mini_RAG_Build_Guide.docx
+2026-09-17 18:07:07,609 - INFO - backend.main - Document saved: /app/documents/Mini_RAG_Build_Guide.docx
+2026-09-17 18:07:07,657 - INFO - backend.ingestion.loader - File loaded: Mini_RAG_Build_Guide.docx
+2026-09-17 18:07:07,658 - INFO - backend.main - Document loaded successfully: Mini_RAG_Build_Guide.docx
+2026-09-17 18:07:07,659 - INFO - backend.main - Upload request completed: Mini_RAG_Build_Guide.docx
+2026-09-17 18:07:13,818 - INFO - backend.main - Question received: what is rag
+2026-09-17 18:07:13,819 - INFO - backend.llm - Starting LLM call
+2026-09-17 18:07:13,820 - INFO - backend.llm - Conversation context prepared - summary: 835 chars, recent conversations: 2
+2026-09-17 18:07:13,820 - INFO - backend.llm - Creating GrepRAG agent
+2026-09-17 18:07:13,821 - INFO - backend.llm - Agent created successfully
+2026-09-17 18:07:13,822 - INFO - backend.llm - Tools available to agent: grep_search, list_files
+2026-09-17 18:07:13,822 - INFO - backend.llm - Starting agent execution
+2026-09-17 18:07:13,823 - INFO - backend.conversation - Memory retrieved - summary chars: 835, recent conversations: 2
+2026-09-17 18:07:13,823 - INFO - backend.llm - Conversation memory retrieved
+2026-09-17 18:07:13,824 - INFO - backend.llm - Sending question and conversation context to agent
+2026-09-17 18:07:22,442 - INFO - backend.grep_tool - TOOL CALLED: grep_search
+2026-09-17 18:07:22,443 - INFO - backend.grep_tool - SEARCH KEYWORDS: ['rag', 'Retrieval-Augmented Generation']
+2026-09-17 18:07:22,492 - INFO - backend.grep_tool - Grep search found no matches
+2026-09-17 18:07:44,048 - INFO - backend.grep_tool - TOOL CALLED: grep_search
+2026-09-17 18:07:44,049 - INFO - backend.grep_tool - SEARCH KEYWORDS: ['RAG']
+2026-09-17 18:07:44,059 - INFO - backend.grep_tool - Grep search found no matches
+2026-09-17 18:07:57,791 - INFO - backend.grep_tool - TOOL CALLED: grep_search
+2026-09-17 18:07:57,792 - INFO - backend.grep_tool - SEARCH KEYWORDS: ['retrieval', 'generation']
+2026-09-17 18:07:57,801 - INFO - backend.grep_tool - Grep search found no matches
+2026-09-17 18:08:01,786 - INFO - backend.llm - Agent execution completed successfully
+2026-09-17 18:08:01,787 - INFO - backend.llm - Token usage - input: 6652, output: 75, total: 7616
+2026-09-17 18:08:01,788 - INFO - backend.llm - LLM response generated successfully
+2026-09-17 18:08:01,789 - INFO - backend.conversation - conversation added - history size: 3
+2026-09-17 18:08:01,789 - INFO - backend.conversation - old conversation moved to memory summary
+2026-09-17 18:08:01,792 - INFO - backend.conversation - Conversation memory saved to: memory/conversation.json
+2026-09-17 18:08:01,793 - INFO - backend.conversation - Memory updated - summary chars: 978, recent conversations: 2
+2026-09-17 18:08:01,793 - INFO - backend.llm - Conversation added to memory
+2026-09-17 18:08:01,794 - INFO - backend.main - Question answered successfully
+2026-09-17 18:10:42,973 - INFO - backend.main - Document upload started: auth.txt
+2026-09-17 18:10:42,977 - INFO - backend.main - Document saved: /app/documents/auth.txt
+2026-09-17 18:10:42,987 - INFO - backend.ingestion.loader - File loaded: auth.txt
+2026-09-17 18:10:42,988 - INFO - backend.main - Document loaded successfully: auth.txt
+2026-09-17 18:10:42,988 - INFO - backend.main - Upload request completed: auth.txt
+2026-09-17 18:10:46,854 - INFO - backend.main - Question received: How does the application protect user accounts and API endpoints?
+2026-09-17 18:10:46,855 - INFO - backend.llm - Starting LLM call
+2026-09-17 18:10:46,856 - INFO - backend.llm - Conversation context prepared - summary: 978 chars, recent conversations: 2
+2026-09-17 18:10:46,856 - INFO - backend.llm - Creating GrepRAG agent
+2026-09-17 18:10:46,857 - INFO - backend.llm - Agent created successfully
+2026-09-17 18:10:46,858 - INFO - backend.llm - Tools available to agent: grep_search, list_files
+2026-09-17 18:10:46,858 - INFO - backend.llm - Starting agent execution
+2026-09-17 18:10:46,859 - INFO - backend.conversation - Memory retrieved - summary chars: 978, recent conversations: 2
+2026-09-17 18:10:46,859 - INFO - backend.llm - Conversation memory retrieved
+2026-09-17 18:10:46,860 - INFO - backend.llm - Sending question and conversation context to agent
+2026-09-17 18:10:55,580 - INFO - backend.grep_tool - TOOL CALLED: grep_search
+2026-09-17 18:10:55,580 - INFO - backend.grep_tool - SEARCH KEYWORDS: ['protect', 'user accounts', 'API endpoints']
+2026-09-17 18:10:55,589 - INFO - backend.grep_tool - Grep search completed successfully. Matches found: 3
+2026-09-17 18:10:55,603 - INFO - backend.context_retrieval - Parsed grep results - files: 1, matches: 3
+2026-09-17 18:10:55,605 - INFO - backend.context_retrieval - Created 1 context groups for ./auth.txt
+2026-09-17 18:10:55,606 - INFO - backend.context_retrieval - Context retrieval completed - 1086 characters returned
+2026-09-17 18:11:04,900 - INFO - backend.llm - Agent execution completed successfully
+2026-09-17 18:11:04,901 - INFO - backend.llm - Token usage - input: 3216, output: 55, total: 3935
+2026-09-17 18:11:04,902 - INFO - backend.llm - LLM response generated successfully
+2026-09-17 18:11:04,902 - INFO - backend.conversation - conversation added - history size: 3
+2026-09-17 18:11:04,903 - INFO - backend.conversation - old conversation moved to memory summary
+2026-09-17 18:11:04,905 - INFO - backend.conversation - Conversation memory saved to: memory/conversation.json
+2026-09-17 18:11:04,906 - INFO - backend.conversation - Memory updated - summary chars: 1033, recent conversations: 2
+2026-09-17 18:11:04,906 - INFO - backend.llm - Conversation added to memory
+2026-09-17 18:11:04,907 - INFO - backend.main - Question answered successfully
+2026-09-17 18:12:54,327 - INFO - backend.main - Question received: what authentication method  did tell me?
+2026-09-17 18:12:54,328 - INFO - backend.llm - Starting LLM call
+2026-09-17 18:12:54,329 - INFO - backend.llm - Conversation context prepared - summary: 1033 chars, recent conversations: 2
+2026-09-17 18:12:54,329 - INFO - backend.llm - Creating GrepRAG agent
+2026-09-17 18:12:54,330 - INFO - backend.llm - Agent created successfully
+2026-09-17 18:12:54,330 - INFO - backend.llm - Tools available to agent: grep_search, list_files
+2026-09-17 18:12:54,331 - INFO - backend.llm - Starting agent execution
+2026-09-17 18:12:54,331 - INFO - backend.conversation - Memory retrieved - summary chars: 1033, recent conversations: 2
+2026-09-17 18:12:54,332 - INFO - backend.llm - Conversation memory retrieved
+2026-09-17 18:12:54,332 - INFO - backend.llm - Sending question and conversation context to agent
+2026-09-17 18:13:06,037 - INFO - backend.grep_tool - TOOL CALLED: grep_search
+2026-09-17 18:13:06,038 - INFO - backend.grep_tool - SEARCH KEYWORDS: ['authentication', 'method', 'token']
+2026-09-17 18:13:06,050 - INFO - backend.grep_tool - Grep search completed successfully. Matches found: 7
+2026-09-17 18:13:06,051 - INFO - backend.context_retrieval - Parsed grep results - files: 1, matches: 7
+2026-09-17 18:13:06,052 - INFO - backend.context_retrieval - Created 1 context groups for ./auth.txt
+2026-09-17 18:13:06,052 - INFO - backend.context_retrieval - Context retrieval completed - 1086 characters returned
+2026-09-17 18:13:16,228 - INFO - backend.llm - Agent execution completed successfully
+2026-09-17 18:13:16,229 - INFO - backend.llm - Token usage - input: 3322, output: 46, total: 3943
+2026-09-17 18:13:16,230 - INFO - backend.llm - LLM response generated successfully
+2026-09-17 18:13:16,231 - INFO - backend.conversation - conversation added - history size: 3
+2026-09-17 18:13:16,231 - INFO - backend.conversation - old conversation moved to memory summary
+2026-09-17 18:13:16,234 - INFO - backend.conversation - Conversation memory saved to: memory/conversation.json
+2026-09-17 18:13:16,235 - INFO - backend.conversation - Memory updated - summary chars: 1113, recent conversations: 2
+2026-09-17 18:13:16,236 - INFO - backend.llm - Conversation added to memory
+2026-09-17 18:13:16,236 - INFO - backend.main - Question answered successfully
+2026-09-17 18:14:32,717 - INFO - backend.main - Question received: What type of authentication did you mention earlier?
+2026-09-17 18:14:32,718 - INFO - backend.llm - Starting LLM call
+2026-09-17 18:14:32,718 - INFO - backend.llm - Conversation context prepared - summary: 1113 chars, recent conversations: 2
+2026-09-17 18:14:32,719 - INFO - backend.llm - Creating GrepRAG agent
+2026-09-17 18:14:32,719 - INFO - backend.llm - Agent created successfully
+2026-09-17 18:14:32,720 - INFO - backend.llm - Tools available to agent: grep_search, list_files
+2026-09-17 18:14:32,720 - INFO - backend.llm - Starting agent execution
+2026-09-17 18:14:32,721 - INFO - backend.conversation - Memory retrieved - summary chars: 1113, recent conversations: 2
+2026-09-17 18:14:32,721 - INFO - backend.llm - Conversation memory retrieved
+2026-09-17 18:14:32,722 - INFO - backend.llm - Sending question and conversation context to agent
+2026-09-17 18:14:45,271 - INFO - backend.grep_tool - TOOL CALLED: grep_search
+2026-09-17 18:14:45,272 - INFO - backend.grep_tool - SEARCH KEYWORDS: ['authentication']
+2026-09-17 18:14:45,282 - INFO - backend.grep_tool - Grep search completed successfully. Matches found: 5
+2026-09-17 18:14:45,283 - INFO - backend.context_retrieval - Parsed grep results - files: 1, matches: 5
+2026-09-17 18:14:45,284 - INFO - backend.context_retrieval - Created 1 context groups for ./auth.txt
+2026-09-17 18:14:45,285 - INFO - backend.context_retrieval - Context retrieval completed - 1086 characters returned
+2026-09-17 18:14:49,939 - INFO - backend.llm - Agent execution completed successfully
+2026-09-17 18:14:49,939 - INFO - backend.llm - Token usage - input: 3406, output: 41, total: 4016
+2026-09-17 18:14:49,940 - INFO - backend.llm - LLM response generated successfully
+2026-09-17 18:14:49,940 - INFO - backend.conversation - conversation added - history size: 3
+2026-09-17 18:14:49,941 - INFO - backend.conversation - old conversation moved to memory summary
+2026-09-17 18:14:49,943 - INFO - backend.conversation - Conversation memory saved to: memory/conversation.json
+2026-09-17 18:14:49,943 - INFO - backend.conversation - Memory updated - summary chars: 1321, recent conversations: 2
+2026-09-17 18:14:49,944 - INFO - backend.llm - Conversation added to memory
+2026-09-17 18:14:49,944 - INFO - backend.main - Question answered successfully
+2026-09-17 18:44:31,236 - INFO - backend.config - BASE_DIR: /app
+2026-09-17 18:44:31,237 - INFO - backend.config - ENV_FILE: /app/.env
+2026-09-17 18:44:31,237 - INFO - backend.config - ENV file exists: False
+2026-09-17 18:44:31,238 - INFO - backend.config - GEMINI_API_KEY configured: True
+2026-09-17 18:44:31,238 - INFO - backend.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-17 18:44:31,239 - INFO - backend.config - GEMINI_MODEL: gemini-3.6-flash
+2026-09-17 18:44:31,239 - INFO - backend.config - DOCUMENTS_DIR: /app/documents
+2026-09-17 18:44:31,240 - INFO - backend.config - Documents directory exists: True
+2026-09-17 18:44:32,994 - INFO - backend.conversation - Conversation memory loaded - summary chars: 1321, recent conversations: 2
+2026-09-17 18:44:32,994 - INFO - backend.conversation - Conversation memory initialized - max history: 2
+2026-09-17 18:44:32,995 - INFO - backend.llm - Initializing LLM client
+2026-09-17 18:44:32,995 - INFO - backend.llm - Gemini model configured: gemini-3.6-flash
+2026-09-17 18:44:32,996 - INFO - backend.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-17 18:44:32,996 - INFO - backend.llm - Gemini API key configured: True
+2026-09-17 18:44:32,998 - INFO - backend.llm - AsyncOpenAI client created
+2026-09-17 18:44:32,998 - INFO - backend.llm - Default OpenAI-compatible client configured
