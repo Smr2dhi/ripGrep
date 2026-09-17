@@ -3575,3 +3575,48 @@
 2026-09-17 13:56:31,599 - INFO - app.llm - Default OpenAI-compatible client configured
 2026-09-17 13:58:49,515 - ERROR - ingestion.loader - Error loading file: file.docx - Package not found at 'documents\file.docx'
 2026-09-17 14:00:27,997 - INFO - ingestion.loader - File loaded: Session_28_Building_a_Complete_RAG_System.docx
+2026-09-17 16:29:17,092 - INFO - backend.config - BASE_DIR: /app
+2026-09-17 16:29:17,094 - INFO - backend.config - ENV_FILE: /app/.env
+2026-09-17 16:29:17,095 - INFO - backend.config - ENV file exists: False
+2026-09-17 16:29:17,096 - INFO - backend.config - GEMINI_API_KEY configured: True
+2026-09-17 16:29:17,097 - INFO - backend.config - GEMINI_ENDPOINT: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-17 16:29:17,098 - INFO - backend.config - GEMINI_MODEL: gemini-3.6-flash
+2026-09-17 16:29:17,100 - INFO - backend.config - DOCUMENTS_DIR: /app/documents
+2026-09-17 16:29:17,101 - INFO - backend.config - Documents directory exists: True
+2026-09-17 16:29:19,043 - INFO - backend.conversation - Conversation memory loaded - summary chars: 692, recent conversations: 2
+2026-09-17 16:29:19,044 - INFO - backend.conversation - Conversation memory initialized - max history: 2
+2026-09-17 16:29:19,046 - INFO - backend.llm - Initializing LLM client
+2026-09-17 16:29:19,047 - INFO - backend.llm - Gemini model configured: gemini-3.6-flash
+2026-09-17 16:29:19,048 - INFO - backend.llm - Gemini endpoint configured: https://generativelanguage.googleapis.com/v1beta/openai/
+2026-09-17 16:29:19,049 - INFO - backend.llm - Gemini API key configured: True
+2026-09-17 16:29:19,051 - INFO - backend.llm - AsyncOpenAI client created
+2026-09-17 16:29:19,052 - INFO - backend.llm - Default OpenAI-compatible client configured
+2026-09-17 16:31:56,270 - INFO - backend.main - Document upload started: auth.txt
+2026-09-17 16:31:56,291 - INFO - backend.main - Document saved: /app/documents/auth.txt
+2026-09-17 16:31:56,309 - INFO - backend.ingestion.loader - File loaded: auth.txt
+2026-09-17 16:31:56,310 - INFO - backend.main - Document loaded successfully: auth.txt
+2026-09-17 16:31:56,311 - INFO - backend.main - Upload request completed: auth.txt
+2026-09-17 16:32:07,622 - INFO - backend.main - Question received: hi
+2026-09-17 16:32:07,623 - INFO - backend.llm - Starting LLM call
+2026-09-17 16:32:07,624 - INFO - backend.llm - Conversation context prepared - summary: 692 chars, recent conversations: 2
+2026-09-17 16:32:07,625 - INFO - backend.llm - Creating GrepRAG agent
+2026-09-17 16:32:07,627 - INFO - backend.llm - Agent created successfully
+2026-09-17 16:32:07,627 - INFO - backend.llm - Tools available to agent: grep_search, list_files
+2026-09-17 16:32:07,628 - INFO - backend.llm - Starting agent execution
+2026-09-17 16:32:07,629 - INFO - backend.conversation - Memory retrieved - summary chars: 692, recent conversations: 2
+2026-09-17 16:32:07,629 - INFO - backend.llm - Conversation memory retrieved
+2026-09-17 16:32:07,630 - INFO - backend.llm - Sending question and conversation context to agent
+2026-09-17 16:32:16,418 - INFO - backend.llm - Agent execution completed successfully
+2026-09-17 16:32:16,419 - INFO - backend.llm - Token usage - input: 1264, output: 9, total: 1332
+2026-09-17 16:32:16,419 - INFO - backend.llm - LLM response generated successfully
+2026-09-17 16:32:16,421 - INFO - backend.conversation - conversation added - history size: 3
+2026-09-17 16:32:16,421 - INFO - backend.conversation - old conversation moved to memory summary
+2026-09-17 16:32:16,425 - INFO - backend.conversation - Conversation memory saved to: memory/conversation.json
+2026-09-17 16:32:16,426 - INFO - backend.conversation - Memory updated - summary chars: 835, recent conversations: 2
+2026-09-17 16:32:16,427 - INFO - backend.llm - Conversation added to memory
+2026-09-17 16:32:16,427 - INFO - backend.main - Question answered successfully
+2026-09-17 16:32:44,528 - INFO - backend.main - Document upload started: Mini_RAG_Build_Guide.docx
+2026-09-17 16:32:44,534 - INFO - backend.main - Document saved: /app/documents/Mini_RAG_Build_Guide.docx
+2026-09-17 16:32:44,594 - INFO - backend.ingestion.loader - File loaded: Mini_RAG_Build_Guide.docx
+2026-09-17 16:32:44,595 - INFO - backend.main - Document loaded successfully: Mini_RAG_Build_Guide.docx
+2026-09-17 16:32:44,596 - INFO - backend.main - Upload request completed: Mini_RAG_Build_Guide.docx
