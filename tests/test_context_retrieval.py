@@ -1,4 +1,4 @@
-from app.context_retrieval import get_context
+from backend.context_retrieval import get_context
 
 
 def test_get_context_with_matching_lines(tmp_path, monkeypatch):

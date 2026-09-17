@@ -1,12 +1,12 @@
 import os
-from utils.prompt import AGENT_INSTRUCTIONS,REFUSAL_ANSWER
+from backend.prompt import AGENT_INSTRUCTIONS,REFUSAL_ANSWER
 from agents.exceptions import ModelBehaviorError
 
-from app.conversation import ConversationMemory
+from backend.conversation import ConversationMemory
 from openai import AsyncOpenAI,OpenAIError
 from utils.logging import get_logger
 
-from app.grep_tool import grep_search,list_files
+from backend.grep_tool import grep_search,list_files
 
 from agents import(
     Agent,
@@ -18,7 +18,7 @@ from agents import(
     )
 
 
-from app.config import(
+from backend.config import(
     GEMINI_API_KEY,
     GEMINI_ENDPOINT,
     GEMINI_MODEL

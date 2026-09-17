@@ -2,7 +2,7 @@ from fastapi import FastAPI, UploadFile, File
 import os
 import shutil
 
-from ingestion.loader import load_document
+from backend.ingestion.loader import load_document
 
 
 app = FastAPI()

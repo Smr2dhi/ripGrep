@@ -1,6 +1,6 @@
 import os
 
-from app.config import DOCUMENTS_DIR
+from backend.config import DOCUMENTS_DIR
 from utils.logging import get_logger
 
 logger = get_logger(__name__)

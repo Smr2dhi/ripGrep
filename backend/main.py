@@ -3,11 +3,11 @@ import shutil
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
 
-from app.config import DOCUMENTS_DIR
-from app.models import AskRequest, AskResponse
-from app.llm import LLMClient
+from backend.config import DOCUMENTS_DIR
+from backend.models import AskRequest, AskResponse
+from backend.llm import LLMClient
 
-from ingestion.loader import load_document
+from backend.ingestion.loader import load_document
 from utils.logging import get_logger
 
 

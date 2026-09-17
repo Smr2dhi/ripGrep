@@ -2,7 +2,7 @@ import subprocess
 import os
 from utils.logging import get_logger
 from agents import function_tool
-from app.config import DOCUMENTS_DIR
+from backend.config import DOCUMENTS_DIR
 
 logger = get_logger(__name__)
 
@@ -64,7 +64,7 @@ def grep_search(keywords: list[str])-> str:
             "Grep search completed successfully. Matches found: %s",
             len(matches))
 
-            from app.context_retrieval import get_context
+            from backend.context_retrieval import get_context
             context = get_context(result.stdout)
             
             return context
