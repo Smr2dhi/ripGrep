@@ -25,5 +25,17 @@ pipeline {
                 sh 'docker build -t ripgrep-frontend -f frontend/Dockerfile .'
             }
         }
+
+        stage('Deploy with Docker Compose') {
+            steps {
+                sh '''
+                    set -eu
+
+                    docker compose config --quiet
+                    docker compose up -d --build
+                    docker compose ps
+                '''
+            }
+        }
     }
 }
