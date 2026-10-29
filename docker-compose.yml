@@ -1,48 +1,36 @@
-services:
 
+services:
   backend:
     container_name: greprag-backend
-
     build:
       context: .
       dockerfile: backend/Dockerfile
-
     image: greprag-backend
-
     ports:
       - "8000:8000"
-
-    env_file:
-      - .env
-
     environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY:?GEMINI_API_KEY must be set}
+      GEMINI_ENDPOINT: ${GEMINI_ENDPOINT:-https://generativelanguage.googleapis.com/v1beta/openai/}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.6-flash}
       TZ: Asia/Kolkata
-
     volumes:
       - ./documents:/app/documents
       - ./memory:/app/memory
       - ./logs:/app/logs
-
     restart: unless-stopped
-
 
   frontend:
     container_name: greprag-frontend
-
     build:
       context: .
       dockerfile: frontend/Dockerfile
-
     image: greprag-frontend
-
     ports:
       - "8501:8501"
-
     environment:
       API_URL: http://backend:8000
       TZ: Asia/Kolkata
-
     depends_on:
       - backend
-
     restart: unless-stopped
+

@@ -19,7 +19,7 @@ pipeline {
                 sh 'docker build -t ripgrep-backend -f backend/Dockerfile .'
             }
         }
-
+// Testing automatic SCM polling
         stage('Build Frontend Image') {
             steps {
                 sh 'docker build -t ripgrep-frontend -f frontend/Dockerfile .'
