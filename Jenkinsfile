@@ -14,15 +14,15 @@ pipeline {
             }
         }
 
-        stage('Build Backend Image') {
+        stage('Delete Backend Image') {
             steps {
-                sh 'docker build -t ripgrep-backend -f backend/Dockerfile .'
+                sh 'docker rm -f greprag-backend'
             }
         }
 // Testing automatic SCM polling
-        stage('Build Frontend Image') {
+        stage('delete Frontend Image') {
             steps {
-                sh 'docker build -t ripgrep-frontend -f frontend/Dockerfile .'
+                sh 'docker rm -f greprag-frontend'
             }
         }
 
